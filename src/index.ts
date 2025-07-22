@@ -1,6 +1,3 @@
-import {sayHello} from "./tests.js";
-import {sayHello2} from "./sayHelloTs.ts";
+import { TitleComponent } from './App';
 
-sayHello()
-
-sayHello2('Alexey');
+document.getElementById('app').append(TitleComponent('Hello World!'));

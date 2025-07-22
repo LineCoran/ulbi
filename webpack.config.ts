@@ -1,12 +1,10 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require("path");
-const webpack = require("webpack");
-// import 'webpack-dev-server';
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-
-module.exports = {
+export const config: webpack.Configuration = {
     entry: path.resolve(__dirname, 'src', 'index.ts'),
-    mode: "development",
+    mode: 'development',
     output: {
         filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist"),
@@ -28,4 +26,6 @@ module.exports = {
     resolve: {
         extensions: [".ts", ".js", ".tsx"],
     }
-}
+};
+
+export default config
