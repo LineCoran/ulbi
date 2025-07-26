@@ -1,9 +1,10 @@
 import { Counter } from './components/Counter';
 import { UiButton } from './components/UiButton/UiButton';
+import './index.scss'
 
 export const App = () => {
     return (
-        <div>
+        <div className="app">
             <Counter />
             <UiButton name={'hello'} />
             {/*<Counter />*/}

@@ -1,7 +1,7 @@
-import './UiButton.scss';
+import * as classes from './UiButton.module.scss';
 
 export const UiButton = ({ name }: { name: string }) => {
-    return <button className="ui-button">
+    return (<button className={classes.btn}>
         { name }
-    </button>
+    </button>)
 }
