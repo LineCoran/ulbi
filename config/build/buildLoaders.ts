@@ -1,10 +1,26 @@
-export const buildLoaders = () => {
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { IWebpackConfigOptions } from './types/config';
+
+export const buildLoaders = (options: IWebpackConfigOptions) => {
+
+    const { isDev } = options;
 
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
-            "style-loader",
-            "css-loader",
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            {
+                loader: 'css-loader',
+                options: {
+                    modules: {
+                        auto: (resourcePath: string) => {
+                            return resourcePath.includes('.module.')
+                        },
+                        localIdentName: isDev ? '[path][name]__[local]__[hash:base64:8]' : '[hash:base64:8]',
+                    },
+                },
+
+            },
             "sass-loader",
         ],
     }
