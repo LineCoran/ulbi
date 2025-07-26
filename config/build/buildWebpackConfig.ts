@@ -13,6 +13,7 @@ export const buildWebpackConfig  = (options: IWebpackConfigOptions) => {
             filename: "[name].[contenthash].js",
             path: paths.output,
             clean: true,
+            chunkFilename: '[name].[contenthash].chunk.js',
         },
         plugins: buildPlugins(paths),
         module: {
