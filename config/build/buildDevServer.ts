@@ -9,5 +9,6 @@ export const buildDevServer = (options: IWebpackConfigOptions): WebpackServerCon
             directory: options.paths.public,
         },
         open: true,
+        historyApiFallback: true,
     }
 }
