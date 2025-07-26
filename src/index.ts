@@ -1,3 +1,3 @@
 import { TitleComponent } from './App';
 
-document.getElementById('app').append(TitleComponent('Hello World!'));
+document.getElementById('app').append(TitleComponent('Hello World 1!'));

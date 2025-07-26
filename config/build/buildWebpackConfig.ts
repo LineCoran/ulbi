@@ -1,11 +1,11 @@
 import { IWebpackConfigOptions } from './types/config';
-import path from 'path';
 import { buildPlugins } from './buildPlugins';
 import { buildLoaders } from './buildLoaders';
 import { buildResolvers } from './buildResolvers';
+import { buildDevServer } from './buildDevServer';
 
 export const buildWebpackConfig  = (options: IWebpackConfigOptions) => {
-    const { mode, paths } = options
+    const { mode, paths, isDev } = options
     return {
         entry: paths.entry,
         mode: mode,
@@ -18,6 +18,8 @@ export const buildWebpackConfig  = (options: IWebpackConfigOptions) => {
         module: {
             rules: buildLoaders()
         },
-        resolve: buildResolvers()
+        resolve: buildResolvers(),
+        devServer: isDev ? buildDevServer(options) : undefined,
+        devtool: isDev ? 'inline-source-map' : undefined,
     }
 }
