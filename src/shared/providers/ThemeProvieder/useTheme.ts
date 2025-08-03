@@ -7,8 +7,6 @@ export const useTheme = () => {
 
     const toggleTheme = () => {
         const newTheme = theme === ThemeVariant.normal ? ThemeVariant.dark : ThemeVariant.normal;
-        console.log(`${theme} === ${ThemeVariant.normal}`)
-        console.log(newTheme)
         setTheme(newTheme)
         localStorage.setItem(LocaleStorageAppThemeKey, newTheme)
     }
