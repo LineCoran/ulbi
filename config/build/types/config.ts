@@ -2,7 +2,8 @@ export interface IWebpackConfigPaths {
     template: string;
     output: string;
     entry: string;
-    public: string
+    public: string;
+    src: string;
 }
 
 type TMode = 'development' | 'production';

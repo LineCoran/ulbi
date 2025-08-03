@@ -1,4 +1,4 @@
-import { FC, useMemo, useState } from 'react';
+import { FC, useState } from 'react';
 import { LocaleStorageAppThemeKey, ThemeContext, ThemeVariant, ThemeVariantType } from './ThemeContext';
 
 const defaultTheme = localStorage.getItem(LocaleStorageAppThemeKey) as ThemeVariantType || ThemeVariant.normal;

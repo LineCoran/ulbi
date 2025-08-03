@@ -1,9 +1,10 @@
-import './app/styles/index.scss'
+import './styles/index.scss'
 import { Link, Route, Routes } from 'react-router-dom';
-import { HomePageAsync } from './pages/Home/HomePage.async';
-import { UserPageAsync } from './pages/User/UserPage.async';
 import { Suspense } from 'react';
-import { useTheme } from './app/theme/useTheme';
+import { useTheme } from '@src/shared/providers/ThemeProvieder';
+import { Home } from '@src/pages/Home/';
+import { User } from '@src/pages/User/';
+import { classNames } from '@src/shared/helpers/classNames';
 
 export const App = () => {
 
@@ -11,14 +12,14 @@ export const App = () => {
 
 
     return (
-        <div className={`app ${theme}`} key={theme}>
+        <div className={classNames('app', {}, [theme])} key={theme}>
             <button onClick={toggleTheme}>{theme}</button>
             <Link to={'/'}>Home</Link>
             <Link to={'/user'}>User</Link>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
-                    <Route path={'/'} element={<HomePageAsync />} />
-                    <Route path={'/user'} element={<UserPageAsync />} />
+                    <Route path={'/'} element={<Home />} />
+                    <Route path={'/user'} element={<User />} />
                 </Routes>
             </Suspense>
         </div>
