@@ -1,4 +1,4 @@
-const User = () => {
+export const User = () => {
 
     return (
         <h1>
@@ -6,5 +6,3 @@ const User = () => {
         </h1>
     )
 }
-
-export default User;

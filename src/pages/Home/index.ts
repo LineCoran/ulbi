@@ -1,0 +1,1 @@
+export { Home } from '@src/pages/Home/ui/Home';

@@ -9,9 +9,10 @@ export default (env: IBuildEnv) => {
 
     const paths: IWebpackConfigPaths = {
         template: path.resolve(__dirname, "public", "index.html"),
-        entry: path.resolve(__dirname, 'src', 'index.tsx'),
+        entry: path.resolve(__dirname, 'src', 'app', 'index.tsx'),
         output: path.resolve(__dirname, "dist"),
         public: path.resolve(__dirname, "public"),
+        src: path.resolve(__dirname, "src"),
     }
 
     const isDev = mode === 'development'

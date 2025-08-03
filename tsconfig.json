@@ -7,6 +7,10 @@
     "jsx": "react-jsx",
     "types": ["node", "webpack"],
     "allowJs": true,
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["./src/*"]
+    },
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
