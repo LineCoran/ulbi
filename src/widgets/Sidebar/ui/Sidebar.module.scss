@@ -1,0 +1,14 @@
+.sidebar {
+  height: calc(100vh - var(--header-height));
+  background: var(--bg-inverted-color);
+  min-width: 300px;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: transform 0.2s ease-in-out;
+  border-radius: 16px;
+  border: 1px solid red;
+}
+
+.collapsed {
+  transform: translateX(0);
+}
