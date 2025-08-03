@@ -1,8 +1,9 @@
+
 export const Home = () => {
     return (
-        <p>
-            home
-        </p>
+        <div>
+            <p>Home</p>
+        </div>
     )
 }
 
