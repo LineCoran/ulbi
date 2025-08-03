@@ -15,7 +15,7 @@ export const buildWebpackConfig  = (options: IWebpackConfigOptions) => {
             clean: true,
             chunkFilename: '[name].[contenthash].chunk.js',
         },
-        plugins: buildPlugins(paths),
+        plugins: buildPlugins(paths, isDev),
         module: {
             rules: buildLoaders(options)
         },
