@@ -2,6 +2,7 @@ import { classNames } from '@src/shared/lib/classNames';
 import { useState } from 'react';
 import * as cls from './Sidebar.module.scss'
 import { Button } from '@src/shared/ui';
+import { useTranslation } from 'react-i18next';
 
 interface SidebarProps {
     className?: string;
@@ -9,6 +10,7 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps) => {
 
+    const { t } = useTranslation()
     const [isCollapsed, setIsCollapsed] = useState(false);
 
     const onToggle = () => {
@@ -17,9 +19,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
 
     return (
         <div className={classNames(cls.sidebar, { [cls.collapsed]: isCollapsed }, [className])}>
-            Менюшка
+            {t('Меню')}
             <Button onClick={onToggle}>
-                Скрыть
+                {t('Скрыть')}
             </Button>
         </div>
     )
