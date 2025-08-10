@@ -12,7 +12,7 @@ export default defineConfig([
     plugins: { js },
     extends: ["js/recommended"],
     languageOptions: {
-      globals: globals.browser
+      globals: { ...globals.browser, "__dirname": true,"__IS_DEV__": true },
     },
     rules: {
       "react/jsx-uses-react": "off",
@@ -22,16 +22,18 @@ export default defineConfig([
       "quotes": ["error", "single"], // использовать одинарные кавычки
       "object-curly-spacing": ["error", "always"],
       "react/jsx-indent": ["error", 4, {indentLogicalExpressions: true, checkAttributes: true }],
+      "indent": ["error", 4],
+      "react/button-has-type": "error",
+      "no-unused-vars": ["error", {
+        "vars": "all",
+        "args": "none",
+        "caughtErrors": "all",
+        "ignoreRestSiblings": true,
+        "ignoreUsingDeclarations": false,
+        "reportUsedIgnorePattern": false,
+        "destructuredArrayIgnorePattern": "^_"
+      }],
+      "react/no-deprecated": 'off',
     }
-      // "import/order": ["error", { // сортировка импортов (опционально)
-      //   "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
-      //   "newlines-between": "always"
-      // }],
-
-      // Дополнительные правила для TypeScript (если нужно)
-      // "@typescript-eslint/type-annotation-spacing": ["error", {
-      //   "before": false,
-      //   "after": true
-      // }]
-  }
+  },
 ]);

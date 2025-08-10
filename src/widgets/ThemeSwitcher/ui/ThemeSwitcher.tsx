@@ -1,19 +1,20 @@
 import { classNames } from '@src/shared/lib/classNames';
-import * as cls from './ThemeSwitcher.module.scss';
-import { Switcher } from '@src/widgets/Switcher/ui/Switcher';
+import { Switcher } from '@src/widgets/Switcher';
 import { useTheme } from '@src/shared/providers/ThemeProvieder';
+import * as cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
     className?: string;
 }
 
-export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
+    const { className } = props
     const { theme, toggleTheme } = useTheme();
     const isChecked = theme === 'normal';
 
     return (
-         
-        <div>
+
+        <div className={classNames(cls.themeSwitcher, {}, [className])}>
             <Switcher value={isChecked} onSwitch={toggleTheme} />
         </div>
     );
