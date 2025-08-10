@@ -16,7 +16,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
     }
 
     return (
-        <div className={classNames(cls.sidebar, {[cls.collapsed]: isCollapsed}, [className])}>
+        <div className={classNames(cls.sidebar, { [cls.collapsed]: isCollapsed }, [className])}>
             Менюшка
             <Button onClick={onToggle}>
                 Скрыть

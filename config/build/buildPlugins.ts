@@ -10,7 +10,7 @@ export const buildPlugins = (paths: IWebpackConfigPaths, isDev: boolean) => {
             filename: 'css/[name].[contenthash].css',
             chunkFilename: 'css/[name].[contenthash].css',
         }),
-        new HtmlWebpackPlugin({template: paths.template }),
+        new HtmlWebpackPlugin({ template: paths.template }),
         new webpack.ProgressPlugin(),
         new webpack.DefinePlugin({
             __IS_DEV__: isDev

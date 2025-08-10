@@ -10,7 +10,7 @@ export const buildWebpackConfig  = (options: IWebpackConfigOptions) => {
         entry: paths.entry,
         mode: mode,
         output: {
-            filename: "[name].[contenthash].js",
+            filename: '[name].[contenthash].js',
             path: paths.output,
             clean: true,
             chunkFilename: '[name].[contenthash].chunk.js',

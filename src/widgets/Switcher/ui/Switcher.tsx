@@ -1,15 +1,15 @@
 import { classNames } from '@src/shared/lib/classNames';
 import * as cls from './Switcher.module.scss';
-import { ChangeEvent, memo } from 'react';
+import { ChangeEvent } from 'react';
 
 interface SwitcherProps {
     className?: string;
     value: boolean;
-    onSwitch: (value: boolean) => void;
+    onSwitch: (_value: boolean) => void;
 }
 
-export const Switcher = memo<SwitcherProps>((props) => {
-    const { value, onSwitch, className } = props;
+export const Switcher = (props: SwitcherProps) => {
+    const { value, onSwitch } = props;
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         onSwitch(event.target.checked);
@@ -23,4 +23,4 @@ export const Switcher = memo<SwitcherProps>((props) => {
             </label>
         </div>
     );
-});
+};
