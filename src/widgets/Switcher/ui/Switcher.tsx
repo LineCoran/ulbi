@@ -5,7 +5,7 @@ import { ChangeEvent } from 'react';
 interface SwitcherProps {
     className?: string;
     value: boolean;
-    onSwitch: (_value: boolean) => void;
+    onSwitch: (value: boolean) => void;
 }
 
 export const Switcher = (props: SwitcherProps) => {
