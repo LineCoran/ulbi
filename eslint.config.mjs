@@ -21,6 +21,7 @@ export default defineConfig([
       // Правила для импортов
       "quotes": ["error", "single"], // использовать одинарные кавычки
       "object-curly-spacing": ["error", "always"],
+      "react/jsx-indent": ["error", 10],
     }
       // "import/order": ["error", { // сортировка импортов (опционально)
       //   "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
