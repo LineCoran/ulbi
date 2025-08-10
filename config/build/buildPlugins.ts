@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { IWebpackConfigPaths } from './types/config';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import BundleAnalyzerPlugin from 'webpack-bundle-analyzer';
 
 export const buildPlugins = (paths: IWebpackConfigPaths, isDev: boolean) => {
     return [
@@ -17,5 +18,6 @@ export const buildPlugins = (paths: IWebpackConfigPaths, isDev: boolean) => {
         }),
         new webpack.HotModuleReplacementPlugin(),
         isDev && new ReactRefreshWebpackPlugin(),
+        new BundleAnalyzerPlugin.BundleAnalyzerPlugin({ analyzerMode: 'disabled' }),
     ].filter(Boolean)
 }
