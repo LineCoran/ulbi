@@ -10,5 +10,6 @@ export const buildDevServer = (options: IWebpackConfigOptions): WebpackServerCon
         },
         open: true,
         historyApiFallback: true,
+        hot: true,
     }
 }
