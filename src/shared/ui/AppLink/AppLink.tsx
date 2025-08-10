@@ -2,7 +2,6 @@ import { classNames } from '@src/shared/lib/classNames';
 import * as cls from './AppLink.module.scss'
 import { Link, LinkProps } from 'react-router-dom';
 import { FC } from 'react';
-import { TValues } from '@src/shared/types';
 
 const AppLinkTheme = {
     primary: 'primary',
@@ -11,7 +10,7 @@ const AppLinkTheme = {
 
 interface AppLinkProps extends  LinkProps {
     className?: string;
-    theme?: TValues<typeof AppLinkTheme>
+    theme?: keyof typeof AppLinkTheme;
 }
 
 export const AppLink: FC<AppLinkProps> = (props) => {
@@ -20,7 +19,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
         className ,
         children,
         to,
-        theme = AppLinkTheme.primary as TValues<typeof AppLinkTheme>,
+        theme = 'primary',
         ...otherProps
     } = props
 
@@ -30,7 +29,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
             className={classNames(
                 cls.appLink,
                 {},
-                [className, cls[theme]
+                [className, cls[AppLinkTheme[theme]]
                 ])}
             {...otherProps}
         >
