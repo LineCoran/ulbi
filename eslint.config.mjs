@@ -15,7 +15,12 @@ export default defineConfig([
     plugins: { js },
     extends: ["js/recommended"],
     languageOptions: {
-      globals: { ...globals.browser, "__dirname": true,"__IS_DEV__": true },
+      globals: {
+        ...globals.browser,
+        ...globals.jest,
+        "__dirname": true,
+        "__IS_DEV__": true,
+      },
     },
     rules: {
       "react/jsx-uses-react": "off",

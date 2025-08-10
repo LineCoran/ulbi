@@ -36,6 +36,19 @@ export const buildLoaders = (options: IWebpackConfigOptions) => {
         use: ['@svgr/webpack'],
     }
 
+    const babelLoader = {
+        test: /\.(js|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: [
+                    ['@babel/preset-env']
+                ]
+            }
+        }
+    }
+
     const fileLoader = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
@@ -45,6 +58,7 @@ export const buildLoaders = (options: IWebpackConfigOptions) => {
         ],
     }
     return [
+        babelLoader,
         typescriptLoader,
         cssLoader,
         svgLoader,
