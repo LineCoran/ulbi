@@ -7,7 +7,7 @@ export const ThemeProvider: FC = ({ children }) => {
     const [theme, setTheme] = useState<ThemeVariantType>(defaultTheme)
 
     return (
-        <ThemeContext.Provider value={{theme, setTheme}}>
+        <ThemeContext.Provider value={{ theme, setTheme }}>
             {children}
         </ThemeContext.Provider>
     )

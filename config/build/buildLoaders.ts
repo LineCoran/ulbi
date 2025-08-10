@@ -21,13 +21,13 @@ export const buildLoaders = (options: IWebpackConfigOptions) => {
                 },
 
             },
-            "sass-loader",
+            'sass-loader',
         ],
     }
 
     const typescriptLoader = {
         test: /\.tsx?$/,
-        loader: "ts-loader",
+        loader: 'ts-loader',
         exclude: /node_modules/,
     }
 

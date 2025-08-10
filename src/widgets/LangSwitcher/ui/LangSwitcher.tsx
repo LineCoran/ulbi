@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@src/shared/ui';
 
 export const LangSwitcher = () => {
-    const {t, i18n} = useTranslation()
+    const { t, i18n } = useTranslation()
 
     const keys: Record<string, string> = {
         'ru': 'Ру',

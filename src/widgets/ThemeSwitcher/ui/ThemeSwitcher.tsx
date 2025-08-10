@@ -12,6 +12,7 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     const isChecked = theme === 'normal';
 
     return (
+         
         <div>
             <Switcher value={isChecked} onSwitch={toggleTheme} />
         </div>
