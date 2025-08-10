@@ -6,7 +6,9 @@
     "start": "webpack serve --env port=3000 mode=development",
     "build": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
-    "lint": "eslint \"**/*.{ts,tsx}\" --fix"
+    "eslint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "stylelint:fix": "stylelint \"**/*.scss\" --fix",
+    "lint": "npm run eslint:fix && npm run stylelint:fix"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +25,7 @@
     "@types/webpack-dev-server": "^4.7.2",
     "css-loader": "^7.1.2",
     "eslint": "^9.33.0",
+    "eslint-plugin-i18next": "^6.1.3",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.37.5",
     "file-loader": "^6.2.0",
@@ -32,6 +35,8 @@
     "react-refresh": "^0.17.0",
     "react-refresh-webpack-plugin": "^0.1.0",
     "style-loader": "^4.0.0",
+    "stylelint": "^16.23.1",
+    "stylelint-config-standard-scss": "^15.0.1",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.5.0",
     "typescript": "^5.0.4",
