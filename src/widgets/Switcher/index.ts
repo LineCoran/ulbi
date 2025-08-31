@@ -1,3 +1,3 @@
-import { Switcher } from '@src/widgets/Switcher/ui/Switcher';
+import { Switcher } from '@src/shared/ui/Switcher/Switcher';
 
 export { Switcher };
